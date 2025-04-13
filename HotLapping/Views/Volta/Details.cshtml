@@ -1,0 +1,25 @@
+﻿@model Circuitos.Models.Volta 
+@{
+    ViewData["Title"] = "Detalhes da Volta";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">Carro</dt>
+        <dd class="col-sm-10">@Model.Carro.Modelo</dd>
+
+        <dt class="col-sm-2">Circuito</dt>
+        <dd class="col-sm-10">@Model.Circuito.Nome</dd>
+
+        <dt class="col-sm-2">Tempo</dt>
+        <dd class="col-sm-10">@Model.Tempo</dd>
+
+        <dt class="col-sm-2">Data e Hora</dt>
+        <dd class="col-sm-10">@Model.DataHora.ToString("g")</dd>
+    </dl>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.VoltaID" class="btn btn-primary">Editar</a>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

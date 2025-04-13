@@ -1,0 +1,23 @@
+possiveis atributos para Carro
+Marca
+Modelo
+Potência (em cv ou kW)
+Peso (em kg)
+Relação peso/potência
+Tipo de tração (FWD, RWD, AWD)
+Ano de fabricação
+
+estava testando index de Circuito para ver se aoareceria correto mas algo deve estar errado, esta dando errro dizendo que nao tem estancia da classe
+
+podemos cirar tambem a classe Voltas, com eesses atributos:
+Carro (associação com a classe Carro)
+
+Circuito (associação com a classe Circuito)
+Tempo registrado
+Data do tempo
+
+
+em relacao a relacionamentos
+Circuito e Carro seria muitos-para-muitos, pois vários carros podem registrar voltas em vários circuitos.
+Para  isso usa a classe Volta
+O relacionamento entre Volta e as outras classes é muitos-para-um (muitas voltas podem estar associadas a um mesmo carro e a um mesmo circuito).

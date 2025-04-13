@@ -1,0 +1,75 @@
+﻿@model Circuitos.Models.Circuito
+
+
+@{
+    ViewData["Title"] = "Detalhes do Circuito";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div>
+    <h4>Circuito</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Pais)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Pais)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Tamanho)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Tamanho)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroCurvas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NumeroCurvas)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Recorde)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Recorde)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecordePiloto)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecordePiloto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RecordeCarro)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RecordeCarro)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Imagem)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Imagem)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CircuitoID">Editar</a> |
+    <a asp-action="Delete" asp-route-id="@Model.CircuitoID">Excluir</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>

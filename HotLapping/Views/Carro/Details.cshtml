@@ -1,0 +1,36 @@
+﻿@model Circuitos.Models.Carro
+
+@{
+    ViewData["Title"] = "Detalhes do Carro";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<dl class="row">
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Modelo)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Modelo)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Marca)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Marca)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Potencia)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Potencia)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Peso)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Peso)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RelacaoPesoPotencia)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.RelacaoPesoPotencia)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Tracao)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.Tracao)</dd>
+
+    <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AnoFabricacao)</dt>
+    <dd class="col-sm-9">@Html.DisplayFor(model => model.AnoFabricacao)</dd>
+</dl>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CarroID" class="btn btn-warning">Editar</a> |
+    <a asp-action="Index" class="btn btn-secondary">Voltar para lista</a>
+</div>

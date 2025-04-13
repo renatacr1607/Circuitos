@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Circuitos.Models.Volta>
+
+@{
+    ViewData["Title"] = "Lista de Voltas";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Nova Volta</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Carro</th>
+            <th>Circuito</th>
+            <th>Tempo (s)</th>
+            <th>Data e Hora</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Carro.Modelo</td>
+                <td>@item.Circuito.Nome</td>
+                <td>@item.Tempo</td>
+                <td>@item.DataHora.ToString("g")</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.VoltaID">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.VoltaID">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.VoltaID">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

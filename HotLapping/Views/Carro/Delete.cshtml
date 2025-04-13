@@ -1,0 +1,40 @@
+﻿@model Circuitos.Models.Carro
+
+@{
+    ViewData["Title"] = "Excluir Carro";
+}
+
+<h1>Excluir</h1>
+<h3>Tem certeza que deseja excluir este carro?</h3>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Modelo)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Modelo)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Marca)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Marca)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Potencia)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Potencia)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Peso)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Peso)</dd>
+
+   //     <dt class="col-sm-3">@Html.DisplayNameFor(model => model.RelacaoPesoPotencia)</dt>
+      //  <dd class="col-sm-9">@Html.DisplayFor(model => model.RelacaoPesoPotencia)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Tracao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Tracao)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AnoFabricacao)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.AnoFabricacao)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CarroID" />
+        <input type="submit" value="Confirmar Exclusão" class="btn btn-danger" /> |
+        <a asp-action="Index">Cancelar</a>
+    </form>
+</div>

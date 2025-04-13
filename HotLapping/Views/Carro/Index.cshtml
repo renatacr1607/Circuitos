@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Circuitos.Models.Carro>
+
+@{
+    ViewData["Title"] = "Lista de Carros";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Adicionar um carro</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Modelo)</th>
+            <th>@Html.DisplayNameFor(model => model.Marca)</th>
+            <th>@Html.DisplayNameFor(model => model.Potencia)</th>
+            <th>@Html.DisplayNameFor(model => model.Peso)</th>
+            <th>Relação Peso/Potência</th>
+            <th>@Html.DisplayNameFor(model => model.Tracao)</th>
+            <th>@Html.DisplayNameFor(model => model.AnoFabricacao)</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Modelo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Marca)</td>
+                <td>@Html.DisplayFor(modelItem => item.Potencia)</td>
+                <td>@Html.DisplayFor(modelItem => item.Peso)</td>
+                <td>@Html.DisplayFor(modelItem => item.RelacaoPesoPotencia)</td>
+                <td>@Html.DisplayFor(modelItem => item.Tracao)</td>
+                <td>@Html.DisplayFor(modelItem => item.AnoFabricacao)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.CarroID" class="btn btn-warning btn-sm">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.CarroID" class="btn btn-info btn-sm">Detalhes</a>
+                    <a asp-action="Delete" asp-route-id="@item.CarroID" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

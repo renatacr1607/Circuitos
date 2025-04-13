@@ -14,6 +14,8 @@ namespace Circuitos.Controllers
             _context = context;
         }
 
+       
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Carros.OrderBy(c => c.Marca).ThenBy(c => c.Modelo).ToListAsync());
@@ -43,6 +45,15 @@ namespace Circuitos.Controllers
             }
 
             return View(carro);
+        }
+        public async Task<IActionResult> Potentes()
+        {
+            var carrosPotentes = await _context.Carros
+                .Where(c => c.Potencia > 300)
+                .OrderByDescending(c => c.Potencia)
+                .ToListAsync();
+
+            return View(carrosPotentes);
         }
 
         public async Task<IActionResult> Edit(int? id)

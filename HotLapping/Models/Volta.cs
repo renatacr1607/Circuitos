@@ -18,6 +18,6 @@ namespace Circuitos.Models
         [Display(Name = "Tempo da volta (segundos)")]
         public double Tempo { get; set; }
 
-        public DateTime DataHora { get; set; } = DateTime.Now;
+        
     }
 }

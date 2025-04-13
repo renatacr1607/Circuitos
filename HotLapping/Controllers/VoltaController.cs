@@ -19,9 +19,20 @@ namespace Circuitos.Controllers
         {
             var voltas = _context.Voltas
                                  .Include(v => v.Carro)
-                                 .Include(v => v.Circuito)
-                                 .OrderBy(v => v.DataHora);
+                                 .Include(v => v.Circuito);
             return View(await voltas.ToListAsync());
+        }
+
+        public async Task<IActionResult> FiltrarVoltasDinamico(string pais, int potenciaMinima)
+        {
+            var voltasFiltradas = await _context.Voltas
+                .Include(v => v.Carro)
+                .Include(v => v.Circuito)
+                .Where(v => v.Carro.Potencia >= potenciaMinima && v.Circuito.Pais == pais)
+                .OrderBy(v => v.Tempo)
+                .ToListAsync();
+
+            return View("Index", voltasFiltradas); // Ou pode retornar uma view separada se quiser
         }
 
         public IActionResult Create()
@@ -37,13 +48,7 @@ namespace Circuitos.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    volta.DataHora = DateTime.Now;
-                    _context.Add(volta);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
+               
             }
             catch (Exception)
             {
@@ -71,7 +76,7 @@ namespace Circuitos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("VoltaID,CarroID,CircuitoID,Tempo,DataHora")] Volta volta)
+        public async Task<IActionResult> Edit(int id, [Bind("VoltaID,CarroID,CircuitoID,Tempo")] Volta volta)
         {
             if (id != volta.VoltaID)
                 return NotFound();

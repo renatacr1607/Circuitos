@@ -26,7 +26,7 @@ namespace Circuitos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Nome,Pais,Cidade,Tamanho,NumeroCurvas,Recorde,RecordePiloto,RecordeCarro,Imagem")] Circuito circuito)
+        public async Task<IActionResult> Create([Bind("Nome,Pais,Cidade,Tamanho,NumeroCurvas,")] Circuito circuito)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace Circuitos.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("CircuitoID,Nome,Pais,Cidade,Tamanho,NumeroCurvas,Recorde,RecordePiloto,RecordeCarro,Imagem")] Circuito circuito)
+        public async Task<IActionResult> Edit(int id, [Bind("CircuitoID,Nome,Pais,Cidade,Tamanho,NumeroCurvas,")] Circuito circuito)
         {
             if (id != circuito.CircuitoID) return NotFound();
 

@@ -16,7 +16,6 @@
             <th>Carro</th>
             <th>Circuito</th>
             <th>Tempo (s)</th>
-            <th>Data e Hora</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -27,7 +26,7 @@
                 <td>@item.Carro.Modelo</td>
                 <td>@item.Circuito.Nome</td>
                 <td>@item.Tempo</td>
-                <td>@item.DataHora.ToString("g")</td>
+                
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.VoltaID">Editar</a> |
                     <a asp-action="Details" asp-route-id="@item.VoltaID">Detalhes</a> |
@@ -35,5 +34,18 @@
                 </td>
             </tr>
         }
+        <form asp-action="FiltrarVoltasDinamico" method="get" class="mb-3">
+            <div class="row">
+                <div class="col">
+                    <input type="text" name="pais" class="form-control" placeholder="País do circuito" />
+                </div>
+                <div class="col">
+                    <input type="number" name="potenciaMinima" class="form-control" placeholder="Potência mínima" />
+                </div>
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                </div>
+            </div>
+        </form>
     </tbody>
 </table>

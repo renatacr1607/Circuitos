@@ -33,16 +33,10 @@ namespace Circuitos.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CarroID"));
 
-                    b.Property<string>("Ano")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("AnoFabricacao")
                         .HasColumnType("int");
 
-                    b.Property<string>("Categoria")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                   
 
                     b.Property<string>("Marca")
                         .IsRequired()
@@ -78,11 +72,7 @@ namespace Circuitos.Migrations
                     b.Property<string>("Cidade")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Imagem")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
+    
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -94,18 +84,7 @@ namespace Circuitos.Migrations
                     b.Property<string>("Pais")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Recorde")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RecordeCarro")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RecordePiloto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+ 
 
                     b.Property<string>("Tamanho")
                         .IsRequired()
@@ -129,9 +108,6 @@ namespace Circuitos.Migrations
 
                     b.Property<int>("CircuitoID")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("DataHora")
-                        .HasColumnType("datetime2");
 
                     b.Property<double>("Tempo")
                         .HasColumnType("float");

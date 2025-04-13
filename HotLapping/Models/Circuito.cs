@@ -22,33 +22,9 @@ namespace Circuitos.Models
         [Required]
         public string NumeroCurvas { get; set; }
 
-        [Required]
-        public string Recorde { get; set; }
-
-        [Required]
-        public string RecordePiloto { get; set; }
-
-        [Required]
-        public string RecordeCarro { get; set; }
-
-        [Required]
-        public string Imagem { get; set; }
 
         public ICollection<Volta> Voltas { get; set; } = new List<Volta>();
 
-        public Circuito()
-        {
-            CircuitoID = 0;
-            Nome = "Interlagois";
-            Pais = "Brasil";
-            Cidade = "São Paulo";
-            Tamanho = "4,309";
-            NumeroCurvas = "15";
-            Recorde = "Teste";
-            RecordePiloto = "Teste";
-            RecordeCarro = "Teste";
-            Imagem = "string.Empty";
-            Voltas = new List<Volta>();
-        }
+        
     }
 }

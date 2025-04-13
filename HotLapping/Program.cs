@@ -1,3 +1,4 @@
+// Example LINQ query to fetch all "Volta" objects with a time less than 90 seconds
 using Circuitos.Data;
 using Circuitos.Models;
 using Microsoft.EntityFrameworkCore;
@@ -32,12 +33,26 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
-    name:"circuito",
+    name: "circuito",
     pattern: "{controller=Circuito}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "carro",
     pattern: "{controller=Carro}/{action=Index}/{id?}");
 
+// LINQ query to fetch "Volta" objects with a time less than 90 seconds
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<CircuitosContext>();
+
+    var voltaQuery = dbContext.Voltas
+        .Where(v => v.Tempo < 90)
+        .ToList();
+
+    foreach (var volta in voltaQuery)
+    {
+        Console.WriteLine($"Volta ID: {volta.VoltaID}, Tempo: {volta.Tempo}");
+    }
+}
 
 app.Run();

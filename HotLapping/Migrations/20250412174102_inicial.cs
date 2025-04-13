@@ -40,10 +40,6 @@ namespace Circuitos.Migrations
                     Cidade = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Tamanho = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     NumeroCurvas = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Recorde = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecordePiloto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    RecordeCarro = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Imagem = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,7 +55,6 @@ namespace Circuitos.Migrations
                     CarroID = table.Column<int>(type: "int", nullable: false),
                     CircuitoID = table.Column<int>(type: "int", nullable: false),
                     Tempo = table.Column<double>(type: "float", nullable: false),
-                    DataHora = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

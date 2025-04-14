@@ -54,5 +54,10 @@ using (var scope = app.Services.CreateScope())
         Console.WriteLine($"Volta ID: {volta.VoltaID}, Tempo: {volta.Tempo}");
     }
 }
-
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<CircuitosContext>();
+    CircuitoDbInitializer.Initialize(context);
+}
 app.Run();

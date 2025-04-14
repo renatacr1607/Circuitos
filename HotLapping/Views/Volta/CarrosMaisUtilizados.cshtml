@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Circuitos.Models.CarroUtilizacao>
+
+<h2>Carros Mais Utilizados</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Modelo</th>
+            <th>Voltas Realizadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Modelo</td>
+                <td>@item.QuantidadeVoltas</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>

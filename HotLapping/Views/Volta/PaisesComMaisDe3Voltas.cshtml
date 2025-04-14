@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Circuitos.Models.PaisVoltas>
+
+<h2>Países com mais de 3 voltas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>País</th>
+            <th>Total de Voltas</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Pais</td>
+                <td>@item.TotalVoltas</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Index" class="btn btn-secondary">Voltar</a>
